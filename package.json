@@ -5,8 +5,29 @@
     "build": "next build"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/base": "^5.0.0-alpha.88",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.7",
+    "@mui/styled-engine-sc": "^5.0.0-rc.1",
+    "@types/uuid": "^8.3.4",
+    "apollo-server-micro": "^3.9.0",
+    "axios": "^0.27.2",
+    "graphql": "^16.5.0",
+    "micro": "^9.3.4",
+    "next": "^12.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5.0.8",
+    "styled-components": "^5.3.5"
+  },
+  "name": "testapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "typescript": "^4.7.4"
   }
 }

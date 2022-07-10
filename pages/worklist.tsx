@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { UserData } from ".";
 import { ListItemValue } from "./list";
+import { WorkUserData } from "./work";
 
 type User = {
   id:string
   name:string,
   create_at:string, 
 }
-export const Page = () => {
-  const {users, setUsers} = useContext(UserData);
+export const WorkPage = () => {
+  const {users, setUsers} = useContext(WorkUserData);
   useEffect(() => {
     axios.get<User[]>("/api/hello").then((res) => {
       console.log(res.data);
@@ -25,4 +25,4 @@ export const Page = () => {
     </div>
   );
 }
-export default Page;
+export default WorkPage;

@@ -26,7 +26,7 @@ export default function Index() {
   };
   
   function handleTestCallApi() {
-      axios.get("http://localhost:3000/api/hello").then((res) => {
+      axios.get("/api/hello").then((res) => {
         res.data.forEach(element => { console.log(element)});
         setUsers(res.data);
       });
