@@ -41,9 +41,7 @@ export default function Index() {
     <Container maxWidth="sm">
       <Box
         sx={{
-          padding:2,
-          maxWidth: 600,
-          minWidth: 300,
+          padding:2
        }}>
        </Box>
        <WorkUserData.Provider value={value}><WorkPage /></WorkUserData.Provider>

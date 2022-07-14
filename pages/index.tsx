@@ -18,25 +18,33 @@ export const UserData = createContext({} as {
   setUsers: Dispatch<SetStateAction<User[]>>
 });
 
+export function checktst(value) {
+  axios.delete("/api/delete/" + value.id).then((res) => {
+  });
+}  
+
 export default function Index() {
   const [users, setUsers] = useState<User[]>([]);
   const value = {
     users,
     setUsers,
   };
-  
+
   function handleTestCallApi() {
       axios.get("/api/hello").then((res) => {
-        res.data.forEach(element => { console.log(element)});
         setUsers(res.data);
       });
   }
   
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ margin: 3 }}>
-        <ButtonTest />
-        <Button onClick={handleTestCallApi}>これです</Button>
+    <Container sx={{
+      minWidth:"800px",
+      border:"1px solid",
+    }}>
+      <Box sx={{
+        margin: 3
+       }}>
+        <Button onClick={handleTestCallApi}>更新する</Button>
         <UserData.Provider value={value}><Page /></UserData.Provider>
       </Box>
     </Container>

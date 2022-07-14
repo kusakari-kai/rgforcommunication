@@ -1,11 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { useRouter } from "next/router";
 import { v4 as uuidv4 } from "uuid";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
     const method = req.method;
     const nowtime = new Date();
-    const datetime = nowtime.getFullYear() + (nowtime.getMonth() + 1) + nowtime.getDate() + " " + 
-				nowtime.getHours() + nowtime.getMinutes() + nowtime.getSeconds();
+    const datetime = nowtime.getFullYear()
+    + "/" + (nowtime.getMonth() + 1).toString().padStart(2, '0')
+    + "/" + nowtime.getDate().toString().padStart(2, '0')
+		+ " " +	nowtime.getHours().toString().padStart(2, '0')
+    + ":" + nowtime.getMinutes().toString().padStart(2, '0')
+    + ":" + nowtime.getSeconds().toString().padStart(2, '0');
     switch (method) {
       case 'POST': {
         const { name } = req.body;
