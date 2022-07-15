@@ -2,10 +2,10 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { ButtonTest } from './button';
 import { createContext, Dispatch, SetStateAction, useState } from 'react';
 import axios from 'axios';
 import Page from './wlist';
+import { createRoot } from 'react-dom/client';
 
 type User = {
   id:string,
@@ -21,6 +21,11 @@ export const UserData = createContext({} as {
 export function checktst(value) {
   axios.delete("/api/delete/" + value.id).then((res) => {
   });
+}  
+
+export function update(id, obj) {
+  console.log(id);
+  console.log(obj.target.innerHTML);
 }  
 
 export default function Index() {
